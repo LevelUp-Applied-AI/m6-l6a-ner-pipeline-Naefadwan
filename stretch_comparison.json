@@ -1,0 +1,214 @@
+{
+  "pattern_count": 14,
+  "custom_labels": [
+    "POLICY",
+    "REPORT",
+    "THRESHOLD"
+  ],
+  "summaries": {
+    "base": {
+      "total_entities": 1202,
+      "label_counts": {
+        "CARDINAL": 138,
+        "DATE": 256,
+        "EVENT": 8,
+        "FAC": 9,
+        "GPE": 165,
+        "LAW": 5,
+        "LOC": 93,
+        "MONEY": 63,
+        "NORP": 21,
+        "ORDINAL": 9,
+        "ORG": 184,
+        "PERCENT": 103,
+        "PERSON": 36,
+        "PRODUCT": 6,
+        "QUANTITY": 92,
+        "TIME": 8,
+        "WORK_OF_ART": 6
+      }
+    },
+    "ruler_before_ner": {
+      "total_entities": 1208,
+      "label_counts": {
+        "CARDINAL": 138,
+        "DATE": 254,
+        "EVENT": 4,
+        "FAC": 8,
+        "GPE": 164,
+        "LAW": 11,
+        "LOC": 93,
+        "MONEY": 63,
+        "NORP": 21,
+        "ORDINAL": 9,
+        "ORG": 187,
+        "PERCENT": 103,
+        "PERSON": 36,
+        "POLICY": 3,
+        "PRODUCT": 6,
+        "QUANTITY": 77,
+        "REPORT": 2,
+        "THRESHOLD": 16,
+        "TIME": 8,
+        "WORK_OF_ART": 5
+      }
+    },
+    "ruler_after_ner": {
+      "total_entities": 1208,
+      "label_counts": {
+        "CARDINAL": 138,
+        "DATE": 256,
+        "EVENT": 8,
+        "FAC": 9,
+        "GPE": 165,
+        "LAW": 5,
+        "LOC": 93,
+        "MONEY": 63,
+        "NORP": 21,
+        "ORDINAL": 9,
+        "ORG": 189,
+        "PERCENT": 103,
+        "PERSON": 36,
+        "POLICY": 1,
+        "PRODUCT": 6,
+        "QUANTITY": 92,
+        "TIME": 8,
+        "WORK_OF_ART": 6
+      }
+    }
+  },
+  "evaluation_standard_labels_only": {
+    "base": {
+      "precision": 0.0492,
+      "recall": 0.6471,
+      "f1": 0.0914,
+      "true_positives": 44,
+      "false_positives": 851,
+      "false_negatives": 24,
+      "predicted_standard_entities": 895,
+      "gold_standard_entities": 68
+    },
+    "ruler_before_ner": {
+      "precision": 0.059,
+      "recall": 0.7647,
+      "f1": 0.1096,
+      "true_positives": 52,
+      "false_positives": 829,
+      "false_negatives": 16,
+      "predicted_standard_entities": 881,
+      "gold_standard_entities": 68
+    },
+    "ruler_after_ner": {
+      "precision": 0.0511,
+      "recall": 0.6765,
+      "f1": 0.095,
+      "true_positives": 46,
+      "false_positives": 854,
+      "false_negatives": 22,
+      "predicted_standard_entities": 900,
+      "gold_standard_entities": 68
+    }
+  },
+  "position_behavior_examples": {
+    "1": {
+      "base": {
+        "Sixth Assessment Report": "EVENT"
+      },
+      "before": {
+        "Sixth Assessment Report": "WORK_OF_ART"
+      },
+      "after": {
+        "Sixth Assessment Report": "EVENT"
+      }
+    },
+    "2": {
+      "base": {},
+      "before": {
+        "COP28": "ORG"
+      },
+      "after": {
+        "COP28": "ORG"
+      }
+    },
+    "5": {
+      "base": {},
+      "before": {
+        "Bonn Climate Change Conference": "EVENT",
+        "Paris Agreement": "LAW"
+      },
+      "after": {}
+    },
+    "7": {
+      "base": {},
+      "before": {
+        "Climate Ambition Summit": "EVENT",
+        "Paris Agreement": "LAW"
+      },
+      "after": {}
+    },
+    "170": {
+      "base": {},
+      "before": {
+        "COP28": "ORG",
+        "Paris Agreement": "LAW"
+      },
+      "after": {}
+    }
+  },
+  "custom_rule_examples": {
+    "THRESHOLD": [
+      {
+        "text_id": 1,
+        "source": "IPCC Summary",
+        "entity_text": "1.5 degrees Celsius",
+        "context": "The IPCC released its Sixth Assessment Report in March 2023, warning that global temperatures could exceed 1.5 degrees Celsius above pre-industrial levels by 2030. The report emphasized the urgent need for immediate and deep emission reductions across all sectors. Secretary-General Antonio Guterres called the findings a code red for humanity and urged world leaders to accelerate the phase-out of fossil fuels before the next COP summit."
+      },
+      {
+        "text_id": 14,
+        "source": "Nature Climate Change",
+        "entity_text": "2 degrees Celsius",
+        "context": "Marine biologists at the Great Barrier Reef Foundation documented the fourth mass coral bleaching event in seven years during March 2024. Water temperatures exceeded 2 degrees Celsius above the seasonal average for 14 consecutive days. The bleaching affected 75% of surveyed reef areas and threatens the biodiversity of over 1,500 fish species and 400 coral species that depend on the reef ecosystem."
+      },
+      {
+        "text_id": 20,
+        "source": "Science Journal",
+        "entity_text": "1.5 degree",
+        "context": "Scientists at the Potsdam Institute for Climate Impact Research modeled tipping point interactions and found that crossing the 1.5 degree threshold could trigger a cascade of five interconnected tipping elements: the Greenland Ice Sheet, the West Antarctic Ice Sheet, tropical coral reefs, the boreal permafrost, and the Atlantic Meridional Overturning Circulation. The study was published in Science in September 2023."
+      }
+    ],
+    "POLICY": [
+      {
+        "text_id": 48,
+        "source": "UNFCCC Finance Report",
+        "entity_text": "Loss and Damage Fund",
+        "context": "The Loss and Damage Fund, established at COP27 in Sharm el-Sheikh and operationalized at COP28, received initial pledges totaling $792 million. Germany and the UAE each pledged $100 million, while the United Kingdom committed $75 million. Developing nations argued that the total falls far short of the estimated $400 billion in annual loss and damage costs."
+      },
+      {
+        "text_id": 170,
+        "source": "COP28 Global Stocktake",
+        "entity_text": "Global Stocktake",
+        "context": "The Global Stocktake at COP28, the first comprehensive assessment of progress under the Paris Agreement, found that the world is not on track to meet any of the agreement's long-term goals. Current policies will lead to 2.4-2.6 degrees of warming by 2100. The stocktake called for transitioning away from fossil fuels, tripling renewable energy, doubling energy efficiency, and substantially reducing non-CO2 emissions including methane."
+      },
+      {
+        "text_id": 190,
+        "source": "Global Methane Pledge Report",
+        "entity_text": "Global Methane Pledge",
+        "context": "The Global Methane Pledge, launched at COP26 in Glasgow, has been signed by over 150 countries committing to reduce methane emissions by 30% below 2020 levels by 2030. If fully implemented, the pledge would avoid 0.2 degrees Celsius of warming by 2050. Key sources targeted include oil and gas operations where methane leak detection and repair is highly cost-effective, and landfills where methane capture can generate renewable energy."
+      }
+    ],
+    "REPORT": [
+      {
+        "text_id": 50,
+        "source": "IEA World Energy Outlook",
+        "entity_text": "Net Zero by 2050 roadmap",
+        "context": "The International Energy Agency's Net Zero by 2050 roadmap states that no new oil and gas fields should be approved for development beyond those already committed as of 2021. The roadmap calls for annual clean energy investment to reach $4 trillion by 2030, up from $1.3 trillion in 2022. IEA Executive Director Fatih Birol emphasized that the transition offers significant economic opportunities alongside emission reductions."
+      },
+      {
+        "text_id": 71,
+        "source": "UNEP Emissions Gap Report",
+        "entity_text": "Emissions Gap Report 2023",
+        "context": "UNEP's Emissions Gap Report 2023 found that current policies put the world on track for 2.5 to 2.9 degrees Celsius of warming by 2100. Full implementation of all conditional and unconditional NDCs would reduce this to 2.0 degrees, still above the Paris Agreement goal. The report called for a 42% reduction in global emissions by 2030 and a 57% reduction by 2035 relative to 2019 levels."
+      }
+    ]
+  }
+}
